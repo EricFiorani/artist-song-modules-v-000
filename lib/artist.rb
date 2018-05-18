@@ -4,15 +4,16 @@ require_relative './concerns/findable.rb'
 require_relative './concerns/paramable.rb'
 
 class Artist
+  extend Findable::ClassMethods
   extend Memorable::ClassMethods
   attr_accessor :name
   attr_reader :songs
 
   @@artists = []
 
-  def self.find_by_name(name)
-    @@artists.detect{|a| a.name == name}
-  end
+  # def self.find_by_name(name)
+  #   @@artists.detect{|a| a.name == name}
+  # end
 
   def initialize
     @@artists << self
