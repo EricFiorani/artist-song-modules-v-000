@@ -5,7 +5,7 @@ module Memorable
     end
 
     def count
-      @artists.count
+      artists.count
     end
   end
 end
